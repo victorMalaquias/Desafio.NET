@@ -25,6 +25,16 @@ namespace Desafio.NET.Business
                 var pagador = await _pixService.ObterPagadorPorId(pixRequest.PagadorId);
                 var recebedor = await _pixService.ObterRecebedorPorId(pixRequest.RecebedorId);
 
+                if (pixRequest.PagadorId <= 0 || pixRequest.RecebedorId <= 0)
+                {
+                    throw new Exception("Campos obrigatórios ausentes ou inválidos.");
+                }
+
+                if (pixRequest.Valor <= 0)
+                {
+                    throw new Exception("O valor da transação deve ser maior que zero.");
+                }
+
                 if (pagador.Saldo < pixRequest.Valor)
                 {
                     throw new Exception("Saldo insuficiente no pagador");

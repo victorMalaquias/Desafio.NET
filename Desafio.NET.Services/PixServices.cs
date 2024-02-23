@@ -27,7 +27,7 @@ namespace Desafio.NET.Services
             if (pagador == null || recebedor == null)
             {
                 throw new Exception("Pagador ou recebedor não encontrado");
-            }
+            }            
 
             var transacao = new Transacao
             {
@@ -62,7 +62,7 @@ namespace Desafio.NET.Services
         public async Task<Recebedor> ObterRecebedorPorId(int recebedorId)
         {
             return await _context.Recebedores.FindAsync(recebedorId);
-        }
+        }       
         #endregion
     }
 }
