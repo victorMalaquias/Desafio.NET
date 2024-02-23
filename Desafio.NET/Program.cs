@@ -2,6 +2,7 @@
 using Desafio.NET.Business;
 using Desafio.NET.Business.Interfaces;
 using Desafio.NET.Database;
+using Desafio.NET.Infrastructurie;
 using Desafio.NET.Services;
 using Desafio.NET.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -27,7 +28,8 @@ namespace Desafio.NET
             builder.Services.AddControllers();
 
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddInfrastructureSwagger();
+            //builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 

@@ -47,9 +47,9 @@ namespace Desafio.NET.Services
         {
             var transacoes = await _context.Transacoes
                 .Include(t => t.Pagador)
-                    .ThenInclude(p => p.Chave) 
+                    .ThenInclude(p => p.Chave)
                 .Include(t => t.Recebedor)
-                    .ThenInclude(r => r.Chave) 
+                    .ThenInclude(r => r.Chave)
                 .ToListAsync();
 
             return transacoes;

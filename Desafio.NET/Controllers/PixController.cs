@@ -35,7 +35,7 @@ namespace Desafio.NET.Controllers
         {
             try
             {
-                var transacoes = await _pixBusiness.ObterTransacoes(); 
+                var transacoes = await _pixBusiness.ObterTransacoes();
 
                 return Ok(transacoes);
             }
